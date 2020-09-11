@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-RUN apt-get update && apt-get -y install git curl unzip
+RUN apt-get update && apt-get -y install git curl unzip wget
 
 RUN apt-get autoremove -y \
     && apt-get clean -y \
