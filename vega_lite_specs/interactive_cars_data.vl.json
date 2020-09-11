@@ -8,7 +8,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/vega/vega/master/docs/data/cars.json"
     },
-    "height": 125,
+    "height": 120,
     "mark": "point",
     "selection": {
       "brush": {

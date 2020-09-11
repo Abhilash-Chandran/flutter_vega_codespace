@@ -32,9 +32,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(widget.title),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50),
+        child: AppBar(
+          centerTitle: true,
+          title: Text(widget.title),
+        ),
       ),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
