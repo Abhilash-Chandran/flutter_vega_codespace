@@ -14,7 +14,7 @@ USER gitpod
 WORKDIR /home/gitpod
 
 RUN git clone https://github.com/flutter/flutter && \
-    /home/vscodespace/flutter/bin/flutter config --enable-web
+    /home/gitpod/flutter/bin/flutter config --enable-web
 
 ENV PUB_CACHE=/home/gitpod/.pub_cache
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
