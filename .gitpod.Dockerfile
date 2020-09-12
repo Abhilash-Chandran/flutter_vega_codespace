@@ -8,7 +8,7 @@ RUN apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-USER gipod
+USER gitpod
 
 WORKDIR /home/gitpod
 
