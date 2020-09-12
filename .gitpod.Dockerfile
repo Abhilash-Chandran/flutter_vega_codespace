@@ -10,10 +10,11 @@ RUN apt-get autoremove -y \
 
 USER gitpod
 
-WORKDIR /home/gitpod
+RUN git clone https://github.com/flutter/flutter.git
 
-RUN git clone https://github.com/flutter/flutter && \
-    /home/gitpod/flutter/bin/flutter config --enable-web
+ENV PUB_CACHE=/home/vscodespace/.pub_cache
+ENV PATH ${PATH}:/home/gitpod/bin:/home/gitpod/bin/cache/dart-sdk/bin
 
-ENV PUB_CACHE /home/gitpod/.pub_cache
-ENV PATH /home/gitpod/flutter/bin:${PATH}
+RUN yes | flutter doctor --android-licenses && flutter doctor
+
+RUN flutter channel beta && flutter upgrade && flutter config --enable-web
