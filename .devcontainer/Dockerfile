@@ -6,6 +6,11 @@ RUN apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
+# optional
+# Install Chrome
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
+
 RUN mkdir /home/vscodespace
 WORKDIR /home/vscodespace
 
@@ -15,7 +20,3 @@ ENV PATH="/home/vscodespace/flutter/bin:$PATH"
 RUN git clone https://github.com/flutter/flutter && \
     /home/vscodespace/flutter/bin/flutter config --enable-web
 
-# optional
-# Install Chrome
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
