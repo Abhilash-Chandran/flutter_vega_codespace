@@ -12,4 +12,4 @@ RUN git clone https://github.com/flutter/flutter && \
     /home/gitpod/flutter/bin/flutter config --enable-web
 
 ENV PUB_CACHE /home/gitpod/.pub_cache
-ENV PATH ${PATH}:/home/gitpod/flutter/bin
+ENV PATH="/home/gitpod/flutter/bin:${PATH}"
