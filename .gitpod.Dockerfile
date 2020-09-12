@@ -6,11 +6,10 @@ RUN apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /home/vscodespace
-WORKDIR /home/vscodespace
+WORKDIR /home/gitpod
 
-ENV PUB_CACHE=/home/vscodespace/.pub_cache
-ENV PATH="/home/vscodespace/flutter/bin:$PATH"
+ENV PUB_CACHE /home/gitpod/.pub_cache
+ENV PATH ${PATH}:/home/gitpod/flutter/bin
 
 RUN git clone https://github.com/flutter/flutter && \
-    /home/vscodespace/flutter/bin/flutter config --enable-web
+    /home/gitpod/flutter/bin/flutter config --enable-web
