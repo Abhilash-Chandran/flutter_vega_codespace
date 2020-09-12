@@ -1,5 +1,5 @@
 FROM debian:stretch
-
+RUN dpkg --configure -a
 RUN apt-get update && apt-get -y install git curl unzip wget
 
 RUN apt-get autoremove -y \
