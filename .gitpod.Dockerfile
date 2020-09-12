@@ -10,7 +10,8 @@ USER gitpod
 
 RUN git clone https://github.com/flutter/flutter.git
 
-ENV PUB_CACHE=/home/vscodespace/.pub_cache
-ENV PATH ${PATH}:/home/gitpod/bin:/home/gitpod/bin/cache/dart-sdk/bin
+ENV PUB_CACHE=/home/gitpod/.pub_cache
+
+ENV PATH ${PATH}:/home/gitpod/flutter/bin:/home/gitpod/flutter/bin/cache/dart-sdk/bin
 
 RUN flutter config --enable-web
