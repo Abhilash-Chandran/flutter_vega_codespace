@@ -8,8 +8,8 @@ RUN apt-get autoremove -y \
 
 WORKDIR /home/gitpod
 
-ENV PUB_CACHE /home/gitpod/.pub_cache
-ENV PATH ${PATH}:/home/gitpod/flutter/bin
-
 RUN git clone https://github.com/flutter/flutter && \
     /home/gitpod/flutter/bin/flutter config --enable-web
+
+ENV PUB_CACHE /home/gitpod/.pub_cache
+ENV PATH ${PATH}:/home/gitpod/flutter/bin
