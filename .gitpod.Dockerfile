@@ -6,8 +6,6 @@ RUN apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-USER gitpod
-
 RUN git clone https://github.com/flutter/flutter.git
 
 ENV PUB_CACHE=/home/gitpod/.pub_cache
