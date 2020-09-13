@@ -7,6 +7,5 @@
   },
   "name": "Flutter",
   "extensions": ["Dart-Code.dart-code", "Dart-Code.flutter","auchenberg.vscode-browser-preview",],
-  "forwardPorts": [3000],
-  "postCreateCommand": "cd flutter_vega_codespace && flutter pub get && flutter run -d web-server --web-hostname=0.0.0.0 --web-port=3000"
+  "forwardPorts": [3000]
 }
